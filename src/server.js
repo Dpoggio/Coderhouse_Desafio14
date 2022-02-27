@@ -74,6 +74,7 @@ if (cfg.MODO == "CLUSTER" && cluster.isPrimary) {
   }))
   app.use(passport.initialize());
   app.use(passport.session());
+  app.use(logger.expressLogMiddleware);
 
   // Configuracion Rutas
   app.get('/', checkAuth, getIndex)

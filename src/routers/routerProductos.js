@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const Productos = require('./../model/productos.js')
+const Productos = require('./../model/productoDaoMongo.js')
 const cfg = require('./../config.js')
 
 const routerProductos = Router();

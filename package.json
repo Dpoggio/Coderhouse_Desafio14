@@ -30,6 +30,7 @@
     "express-session": "^1.17.2",
     "faker": "^5.5.3",
     "knex": "^0.95.12",
+    "log4js": "^6.4.1",
     "mongoose": "^6.0.13",
     "mysql": "^2.18.1",
     "normalizr": "^3.6.1",
