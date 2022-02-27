@@ -1,25 +1,25 @@
 
 const cluster = require('cluster')
 const cfg = require('./config.js')
-const Log = require('./lib/log.js')
+const logger = require('./lib/logger.js')
 
 if (cfg.MODO == "CLUSTER" && cluster.isPrimary) {
   const numCPUs = require('os').cpus().length
   
-  Log.info(`Inicio Modo CLUSTER: Cantidad de Cpus [${ numCPUs}]`)
+  logger.info(`Inicio Modo CLUSTER: Cantidad de Cpus [${ numCPUs}]`)
 
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork()
-    Log.info('Creando un nuevo Worker...')
+    logger.info('Creando un nuevo Worker...')
   }
 
   cluster.on('exit', worker => {
-    Log.info(`Worker ${worker.process.pid} caido`)
+    logger.info(`Worker ${worker.process.pid} caido`)
     cluster.fork()
   })
 
 } else {
-  Log.info(`Worker iniciado - PID WORKER ${process.pid}`)
+  logger.info(`Worker iniciado - PID WORKER ${process.pid}`)
 
   const express = require('express')
 
@@ -97,9 +97,9 @@ if (cfg.MODO == "CLUSTER" && cluster.isPrimary) {
 
   // Inicio server
   const server = httpServer.listen(cfg.PORT, () => {
-      Log.info(`Servidor HTTP escuchando en el puerto ${server.address().port}`)
+      logger.info(`Servidor HTTP escuchando en el puerto ${server.address().port}`)
   })
-  server.on("error", error => Log.error(`Error en servidor ${error}`))
+  server.on("error", error => logger.error(`Error en servidor ${error}`))
 
   // Inicio conexion con DB
   const mongoose = require('mongoose')
@@ -107,7 +107,7 @@ if (cfg.MODO == "CLUSTER" && cluster.isPrimary) {
       useNewUrlParser: true,
       useUnifiedTopology: true
   })
-  mongoose.connection.on('error', error => Log.error(`Error al conectarse a la base de datos: ${error}`))
-  mongoose.connection.once('open', () => Log.info('Conectado a la base de datos'))
+  mongoose.connection.on('error', error => logger.error(`Error al conectarse a la base de datos: ${error}`))
+  mongoose.connection.once('open', () => logger.info('Conectado a la base de datos'))
 
 }
