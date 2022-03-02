@@ -78,3 +78,28 @@ nginx.exe
 #### Iniciar nginx con /api/randoms apuntando a servidores FORK
 * Utilizar el archivo "configNginx/config2.conf"
 nginx.exe -s reload
+
+## Compression
+
+### Ruta /info/compressed comprimida:
+
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 2446
+ETag: W/"98e-kwfQSqJ6E5Ik1znR8FpTMvIKEAs"
+Vary: Accept-Encoding
+Date: Wed, 02 Mar 2022 23:15:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+### Ruta /info no comprimida:
+
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 2446
+ETag: W/"98e-LVtAYBcd7cjqcKFuRCBWfmFl968"
+Date: Wed, 02 Mar 2022 23:14:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+##
