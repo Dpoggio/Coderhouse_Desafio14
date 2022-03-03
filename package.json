@@ -1,7 +1,7 @@
 {
-  "name": "coderhouse_desafio13",
+  "name": "coderhouse_desafio14",
   "version": "1.0.0",
-  "description": "Servidor con balance de carga",
+  "description": "Loggers, Gzip y analisis de performance",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dpoggio/Coderhouse_Desafio13.git"
+    "url": "git+https://github.com/Dpoggio/Coderhouse_Desafio14.git"
   },
   "author": "Demian Poggio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dpoggio/Coderhouse_Desafio13/issues"
+    "url": "https://github.com/Dpoggio/Coderhouse_Desafio14/issues"
   },
-  "homepage": "https://github.com/Dpoggio/Coderhouse_Desafio13#readme",
+  "homepage": "https://github.com/Dpoggio/Coderhouse_Desafio14#readme",
   "dependencies": {
     "autocannon": "^7.7.0",
     "bcrypt": "^5.0.1",
