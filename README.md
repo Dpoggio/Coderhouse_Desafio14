@@ -102,4 +102,15 @@ Date: Wed, 02 Mar 2022 23:14:21 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
-##
+## Profiling
+
+### Artillery utilizando node --prof
+
+    artillery quick --count 20 -n 50 http://localhost:8080/info > reportes/nodeprof/artillery/results_noconsole.txt
+    artillery quick --count 20 -n 50 http://localhost:8080/info?console=true > reportes/nodeprof/artillery/results_console.txt
+
+### Artillery utilizando node --inspect
+
+    artillery quick --count 20 -n 50 http://localhost:8080/info > reportes/inspect/artillery/results_noconsole.txt
+    artillery quick --count 20 -n 50 http://localhost:8080/info?console=true > reportes/inspect/artillery/results_console.txt
+

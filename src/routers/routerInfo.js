@@ -3,7 +3,11 @@ const routerInfo = Router();
 const compression = require('compression')
 
 /**** Rutas ****/
-const getParams = () => {
+const getParams = (req) => {
+    if (req.query.console) {
+        console.log('console: GET /info')
+    }
+    
     return [
         { desc: "Argumentos de Entrada", value: process.argv.slice(2) },
         { desc: "Nombre de la plataforma", value: process.platform },
@@ -17,11 +21,11 @@ const getParams = () => {
 }
 
 routerInfo.get('/', (req, res) => {
-    res.render('info', { params: getParams()})
+    res.render('info', { params: getParams(req)})
 })
 
 routerInfo.get('/compressed', compression(), (req, res) => {
-    res.render('info', { params: getParams()})
+    res.render('info', { params: getParams(req)})
 })
 
 exports.routerInfo = routerInfo;
