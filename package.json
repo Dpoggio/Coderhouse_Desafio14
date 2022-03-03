@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/server.js",
+    "consoletest": "node ./src/benchmark_console.js",
+    "noconsoletest": "node ./src/benchmark_noconsole.js",
+    "start": "0x ./src/server.js",
     "devStart": "nodemon ./src/server.js"
   },
   "engines": {
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/Dpoggio/Coderhouse_Desafio13#readme",
   "dependencies": {
+    "autocannon": "^7.7.0",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "connect-mongo": "^4.6.0",

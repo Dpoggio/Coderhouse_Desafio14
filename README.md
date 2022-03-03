@@ -114,3 +114,11 @@ Keep-Alive: timeout=5
     artillery quick --count 20 -n 50 http://localhost:8080/info > reportes/inspect/artillery/results_noconsole.txt
     artillery quick --count 20 -n 50 http://localhost:8080/info?console=true > reportes/inspect/artillery/results_console.txt
 
+### Autocannon utilizando node --prof
+
+    npm run consoletest
+     node --prof-process ..\reportes\nodeprof\autocannon\isolate_console.log > ..\reportes\nodeprof\autocannon\result_prof_console.log
+    npm run noconsoletest
+     node --prof-process ..\reportes\nodeprof\autocannon\isolate_noconsole.log > ..\reportes\nodeprof\autocannon\result_prof_noconsole.log
+
+### Autocannon utilizando node --inspect
